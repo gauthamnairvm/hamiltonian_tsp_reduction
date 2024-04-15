@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudrata -&gt; TSP</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Homepage Styling CSS Elements-->
+  <style>
+    body {
+    background-color: #2E3440;
+    color: #D8DEE9;
+    font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      padding: 50px;
+    }
+
+    .heading {
+      font-family: 'Arial', sans-serif; 
+      color: #007bff; 
+    }
+
+    /*Grid matrix Styling*/
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(49px, 1fr));
+      gap: 5px;
+    }
+
+    .grid-cell {
+      position: relative;
+      width: 49px;
+      height: 49px;
+      border: 1px solid #ccc;
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .grid-cell.active {
+      background-color: green;
+    }
+
+    .grid-cell.active.un-clickable {
+      pointer-events: none;
+    }
+
+    .grid-cell .indices {
+      color: #fff;
+    }
+
+    .grid-cell:hover {
+      cursor: pointer;
+    }
+
+    /* 3D Animation for Heading */
+    .box {
+      display: flex;
+    }
+
+    .box .inner {
+      width: 400px;
+      height: 200px;
+      line-height: 200px;
+      font-size: 4em;
+      font-family: sans-serif;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .box .inner:first-child {
+      background-color: #FFD700;
+      color: #1E90FF;
+      transform-origin: right;
+      transform: perspective(100px) rotateY(-15deg);
+    }
+
+    .box .inner:last-child {
+      background-color: #1E90FF;
+      color: #FFD700;
+      transform-origin: left;
+      transform: perspective(100px) rotateY(15deg);
+    }
+
+    .box .inner span {
+      position: absolute;
+      animation: marquee 5s linear infinite;
+    }
+
+    .box .inner:last-child span {
+      animation-delay: 2.5s;
+      left: -100%;
+    }
+
+    select {
+    background-color: #3B4252;
+    color: #D8DEE9;
+    border: 1px solid #81A1C1;
+    }
+
+  /* Styling for the 'Run Algo' button */
+  .btn-run-algo {
+    background-color: #88C0D0;
+    color: #2E3440;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn-run-algo:hover {
+    background-color: #81A1C1;
+  }
+
+  .header {
+    color: #81A1C1;
+  }
+
+  /* CSS to make grid blurred and unclickable */
+  .blur-and-disable {
+    pointer-events: none;
+    opacity: 0.4;
+    filter: blur(5px);
+  }
+
+  /*CSV upload section styling elements*/
+  #csvUploadSection {
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .btn-upload {
+    background-color: #5E81AC;
+    color: #ECEFF4;
+    border: none;
+    margin-left: 10px;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .btn-upload:hover {
+    background-color: #81A1C1;
+  }
+
+  .form-control-file {
+    color: #ECEFF4;
+    background-color: #434C5E;
+    border: 1px solid #81A1C1;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  /* Alert container margin */
+  #uploadAlertContainer {
+    margin-top: 1rem;
+  }
+
+  /*Keyframes for header animation*/
+  @keyframes marquee {
+    0% {
+      left: -100%;
+    }
+
+    50% {
+      left: 0%;
+    }
+
+    100% {
+      left: 100%; 
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <!--3D Box Animation-->
+  <div class="container mt-5">
+  <div class="box">
+    <div class="inner">
+      <span>Rudrata</span>
+    </div>
+    <div class="inner">
+      <span>TSP</span>
+    </div>
+  </div>
+
+  <hr>
+  <!-- Number of Vertices Dropdown -->
+  <div class="form-group">
+    <label for="numberOfVertices">Number of Vertices:</label>
+    <select id="numberOfVertices" class="form-control">
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+    </select>
+  </div>
+
+  <!-- Grid -->
+  <div id="gridContainer" class="grid-container mt-4"></div>
+
+  <hr class="my-4">
+  <div class="text-center">
+    <h4>Or Upload CSV</h4>
+  </div>
+
+  <!-- CSV Upload Form -->
+  <div id="csvUploadSection" class="d-flex justify-content-center align-items-center">
+    <form id="csvUploadForm" enctype="multipart/form-data" class="d-flex align-items-center">
+      <div class="form-group mb-0">
+        <input type="file" name="file" accept=".csv" class="form-control-file">
+      </div>
+      <button type="button" id="uploadCsvButton" class="btn btn-upload ml-2">Upload CSV</button>
+    </form>
+  </div>
+  <div id="uploadAlertContainer" class="mt-3"></div>
+
+
+  <!-- Button to Execute underlying algorithm and Navigate to Graph Vizualization Page -->
+  <div id="runAlgoBtn" class="text-center mt-5">
+    <div class="btn-run-algo">Run Algo</div>
+  </div>
+  </div>
+
+  <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="background-color: #2E3440; color: #D8DEE9;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="instructionsModalLabel" style="color:greenyellow;">How to Use This Site</h5>
+        </div>
+        <div class="modal-body">
+          <!-- Page instructions -->
+          <p style = "color:greenyellow;">Welcome to the RudrataViz! Here's how to get started:</p>
+          <ol>
+            <li style="color: greenyellow;">Select the number of vertices and click on the grid to toggle edges and build your undirected graph. (Self edges are unclickable.)</li>
+            <li style="color: greenyellow;">You can alternatively choose to upload a CSV file containing an adjacency matrix representation of your graph.</li>
+            <li style="color: greenyellow;">Valid CSV file format:</li>
+            <ul>
+              <li><strong style="color: greenyellow;">Must contain a header with node lables(If None, just add numbered vertices as your csv header).</strong> </li>
+              <li><strong style="color: greenyellow;">Excluding the header, must contain NxN elements, where N = number of vertices and each i,jth entry denotes an edge from node i to node j.</strong> </li>
+              <li><strong style="color: greenyellow;">Edges must be unweighted and undirected, use only 0's and 1's as entries for you matrix(0 - no edge).</strong> </li>
+              <li><strong style="color: greenyellow;">Provide self edges as 0.</strong> </li>
+            </ul>
+            <li style="color: greenyellow;">Click 'Run Algo' to visualize your graphs and find Rudrata cycles.</li>
+          </ol>
+          <p><strong style="color: red;">Please follow the valid format when providing CSV files for proper results and visualization.</strong></p>
+          <p style= "color:greenyellow;">Example of a valid CSV file:</p>
+          <img src="\static\sample.png" alt="Sample CSV format" style="max-width:100%;height:auto;">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap and other required styling scripts-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom Scripts defining various page functionalities-->
+
+  <script>
+  /*JavaScript for CSV upload and disabling grid*/
+  document.getElementById('uploadCsvButton').addEventListener('click', function() {
+    var formData = new FormData();
+    var fileInput = document.querySelector('input[type=file]');
+    var file = fileInput.files[0];
+
+    if (file) {
+      formData.append('file', file, file.name);
+
+      fetch('/upload_csv', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        showBootstrapAlert(data.success? 'success': 'warning', data.message);
+        if(data.success){
+          document.getElementById('gridContainer').classList.add('blur-and-disable'); 
+        }
+      })
+      .catch(error => {
+        showBootstrapAlert('danger', error.message);
+      });
+    } else {
+      showBootstrapAlert('danger', 'Please select a file before uploading.');
+    }
+  });
+
+  function showBootstrapAlert(type, message) {
+    var alertContainer = document.getElementById('uploadAlertContainer');
+    alertContainer.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+      ${message}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>`;
+  }
+  </script>
+
+  <script>
+  /*Function to send grid data to Flask backend*/
+  function sendGridDataToFlask(gridData) {
+    fetch('/process_grid', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(gridData)
+    })
+    .then(response => {
+        if (response.ok) {
+          window.location.href = '/redirect_rudrataviz';
+        }
+        else{
+          throw new Error('Network response was not ok');
+        }
+        
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+  }
+
+  function sendRequestToProcessCsv() {
+    fetch('/process_csv', { 
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/redirect_rudrataviz'; 
+        } else {
+            showBootstrapAlert('warning', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        showBootstrapAlert('danger', 'Error communicating with server.');
+    });
+  }
+
+  /*Function to capture grid data*/
+  function captureGridData() {
+      var gridData = [];
+      $('.grid-cell.active').each(function() {
+          var row = parseInt($(this).attr('data-row'));
+          var col = parseInt($(this).attr('data-col'));
+          gridData.push([row, col]);
+      });
+      console.log(gridData)
+      return gridData;
+  }
+
+
+  /*Function to generate grid based on number of vertices*/
+  function generateGrid(size) {
+    var gridContainer = $('#gridContainer');
+    gridContainer.empty();
+    for (var i = 1; i <= size; i++) {
+      var row = $('<div class="grid-row"></div>');
+      for (var j = 1; j <= size; j++) {
+        var cellClass = 'grid-cell';
+        if (i === j) {
+          cellClass += ' un-clickable';
+        }
+        var cell = $('<div class="' + cellClass + '" data-row="' + i + '" data-col="' + j + '"><span class="indices">' + i + ',' + j + '</span></div>');
+        row.append(cell);
+      }
+      gridContainer.append(row);
+    }
+  }
+
+  /*Function to handle cell click and disable upload csv button*/
+  function handleCellClick() {
+    $('.grid-cell').click(function() {
+      var row = parseInt($(this).attr('data-row'));
+      var col = parseInt($(this).attr('data-col'));
+      if (!$(this).hasClass('un-clickable')) {
+        $(this).toggleClass('active');
+        $('.grid-cell[data-row="' + col + '"][data-col="' + row + '"]').toggleClass('active');
+        $(this).find('.indices').toggleClass('active');
+        toggleUploadCsvButtonDisabledState();
+      }
+    });
+  }
+
+  function toggleUploadCsvButtonDisabledState() {
+  var isGridActive = $('.grid-cell.active').length > 0;
+  $('#uploadCsvButton').prop('disabled', isGridActive);
+  }
+
+  /*Initialize grid with default value*/
+  generateGrid(3);
+  handleCellClick();
+
+  /*Event listener for number of vertices change*/
+  $('#numberOfVertices').change(function() {
+    var size = parseInt($(this).val());
+    generateGrid(size);
+    handleCellClick();
+  });
+
+  /*Event listener for "Run Algo" button click*/
+  $('#runAlgoBtn').click(function() {
+    if ($('#gridContainer').hasClass('blur-and-disable')) {
+      window.location.href = '/redirect_rudrataviz'
+    } else {
+        var gridData = captureGridData();
+        sendGridDataToFlask(gridData);
+    }
+  });
+
+  $(document).ready(function(){
+      $("#instructionsModal").modal('show');
+    });
+
+  </script>
+
+</body>
+</html>

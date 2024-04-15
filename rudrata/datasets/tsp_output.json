@@ -1,0 +1,1259 @@
+{
+    "nodes": [
+        {
+            "id": "Frodo Baggins"
+        },
+        {
+            "id": " Samwise Gamgee"
+        },
+        {
+            "id": " Meriadoc Brandybuck"
+        },
+        {
+            "id": " Peregrin Took"
+        },
+        {
+            "id": " Gandalf"
+        },
+        {
+            "id": " Aragorn"
+        },
+        {
+            "id": " Legolas"
+        },
+        {
+            "id": " Gimli"
+        },
+        {
+            "id": " Boromir"
+        },
+        {
+            "id": " Saruman"
+        },
+        {
+            "id": " Galadriel"
+        },
+        {
+            "id": " Elrond"
+        },
+        {
+            "id": " Gollum"
+        },
+        {
+            "id": " Arwen"
+        },
+        {
+            "id": " Theoden"
+        },
+        {
+            "id": " Eowyn"
+        }
+    ],
+    "links": [
+        {
+            "source": "Frodo Baggins",
+            "target": "Frodo Baggins",
+            "value": "2"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Samwise Gamgee",
+            "value": "2"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Meriadoc Brandybuck",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Peregrin Took",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Gandalf",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Aragorn",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Legolas",
+            "value": "2"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Boromir",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Saruman",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Galadriel",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Elrond",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Gollum",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Arwen",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Theoden",
+            "value": "1"
+        },
+        {
+            "source": "Frodo Baggins",
+            "target": " Eowyn",
+            "value": "1"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": "Frodo Baggins",
+            "value": "2"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Meriadoc Brandybuck",
+            "value": "2"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Gimli",
+            "value": "1"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Samwise Gamgee",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Samwise Gamgee",
+            "value": "2"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Gandalf",
+            "value": "2"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Legolas",
+            "value": "1"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Meriadoc Brandybuck",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Boromir",
+            "value": "2"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Gollum",
+            "value": "2"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Peregrin Took",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Meriadoc Brandybuck",
+            "value": "2"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Aragorn",
+            "value": "2"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Galadriel",
+            "value": "1"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Gandalf",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Gandalf",
+            "value": "2"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Boromir",
+            "value": "1"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Aragorn",
+            "target": " Eowyn",
+            "value": "2"
+        },
+        {
+            "source": " Legolas",
+            "target": "Frodo Baggins",
+            "value": "2"
+        },
+        {
+            "source": " Legolas",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Meriadoc Brandybuck",
+            "value": "1"
+        },
+        {
+            "source": " Legolas",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Galadriel",
+            "value": "2"
+        },
+        {
+            "source": " Legolas",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Gollum",
+            "value": "1"
+        },
+        {
+            "source": " Legolas",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Legolas",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": "Frodo Baggins",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Samwise Gamgee",
+            "value": "1"
+        },
+        {
+            "source": " Gimli",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Boromir",
+            "value": "2"
+        },
+        {
+            "source": " Gimli",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Arwen",
+            "value": "2"
+        },
+        {
+            "source": " Gimli",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Gimli",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Boromir",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Peregrin Took",
+            "value": "2"
+        },
+        {
+            "source": " Boromir",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Aragorn",
+            "value": "1"
+        },
+        {
+            "source": " Boromir",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Gimli",
+            "value": "2"
+        },
+        {
+            "source": " Boromir",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Boromir",
+            "target": " Eowyn",
+            "value": "1"
+        },
+        {
+            "source": " Saruman",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Saruman",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Galadriel",
+            "value": "2"
+        },
+        {
+            "source": " Saruman",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Arwen",
+            "value": "2"
+        },
+        {
+            "source": " Saruman",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Saruman",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Gandalf",
+            "value": "1"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Legolas",
+            "value": "2"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Saruman",
+            "value": "2"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Galadriel",
+            "target": " Eowyn",
+            "value": "1"
+        },
+        {
+            "source": " Elrond",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Elrond",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Gollum",
+            "value": "2"
+        },
+        {
+            "source": " Elrond",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Elrond",
+            "target": " Theoden",
+            "value": "2"
+        },
+        {
+            "source": " Elrond",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Gollum",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Peregrin Took",
+            "value": "2"
+        },
+        {
+            "source": " Gollum",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Legolas",
+            "value": "1"
+        },
+        {
+            "source": " Gollum",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Elrond",
+            "value": "2"
+        },
+        {
+            "source": " Gollum",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Gollum",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Arwen",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Gimli",
+            "value": "2"
+        },
+        {
+            "source": " Arwen",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Saruman",
+            "value": "2"
+        },
+        {
+            "source": " Arwen",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Theoden",
+            "value": "17"
+        },
+        {
+            "source": " Arwen",
+            "target": " Eowyn",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Theoden",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Aragorn",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Boromir",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Galadriel",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Elrond",
+            "value": "2"
+        },
+        {
+            "source": " Theoden",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Theoden",
+            "target": " Eowyn",
+            "value": "2"
+        },
+        {
+            "source": " Eowyn",
+            "target": "Frodo Baggins",
+            "value": "1"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Samwise Gamgee",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Meriadoc Brandybuck",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Peregrin Took",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Gandalf",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Aragorn",
+            "value": "2"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Legolas",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Gimli",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Boromir",
+            "value": "1"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Saruman",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Galadriel",
+            "value": "1"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Elrond",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Gollum",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Arwen",
+            "value": "17"
+        },
+        {
+            "source": " Eowyn",
+            "target": " Theoden",
+            "value": "2"
+        }
+    ]
+}

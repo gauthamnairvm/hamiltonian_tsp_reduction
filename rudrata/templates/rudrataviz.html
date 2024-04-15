@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphs Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Page styling CSS -->
+  <style>
+    
+    body {
+      background-color: #2E3440;
+      color: #D8DEE9;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /*Container styling*/
+    .container-fluid {
+      padding-top: 120px;
+    }
+    .graph-container {
+      border: 1px solid #ddd;
+      background-color: #2E3440;
+      border-radius: 15px;
+      width: 500px;
+      height: 500px; 
+      overflow: hidden;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /*Custom alert styling*/
+    .alert-custom {
+    color: #00C8FF;
+    background-color: #000000;
+    border: 1px solid #00C8FF;
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px;
+    padding: 20px; 
+    }
+    /*Headings*/
+    h2 {
+      color: #FFD700; 
+    }
+    h1 {
+      color: #FFD700; 
+    }
+
+    /* Ensuring equal height for graph containers */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Legend container styling */
+    .legend-container {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #3B4252;
+      color: #ECEFF4;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #D8DEE9;
+    }
+
+    .legend-color {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border-radius: 5px;
+    }
+    .close {
+      float: right;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #D8DEE9;
+      text-shadow: none;
+      opacity: 1;
+  }
+
+    .close:hover, .close:focus {
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: .75;
+    }
+  </style>
+  <script src="//unpkg.com/3d-force-graph"></script>
+</head>
+<body>
+    <div class="legend-container">
+      <button type="button" class="close" aria-label="Close" onclick="document.querySelector('.legend-container').style.display='none';">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4>Legend</h4>
+      <div><span class="legend-color" style="background-color: #00C8FF;"></span> Input Graph Edge G</div>
+      <div><span class="legend-color" style="background-color: #FF6A00;"></span> Added Edge in G'</div>
+      <div><span class="legend-color" style="background-color: #FFFF00;"></span> Rudrata Cycle Edge present in Graph G</div>
+    </div>
+  
+  
+    {% if show_alert %}
+    <div id="alertMessage" class="alert alert-danger" role="alert">
+        <button type="button" class="close" aria-label="Close" onclick="document.getElementById('alertMessage').style.display='none';">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        No cycles were found in the input graph G.
+    </div>
+    {% else %}
+    <div id="alertMessage" class="alert alert-success" role="alert">
+        <button type="button" class="close" aria-label="Close" onclick="document.getElementById('alertMessage').style.display='none';">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        Input Graph G has a rudrata cycle: {{cycle}}
+    </div>
+    {% endif %}
+    
+
+    <div class="container-fluid">
+        <!-- Heading -->
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">RUDRATA -> TSP</h1>
+          </div>
+        </div>
+        <!-- Graphs -->
+        <div class="row">
+          <!-- Graph 1 -->
+          <div class="col-md-6">
+            <h2 class="text-center">Graph G</h2>
+            <div class="graph-container">
+              <div id="graph-container1"></div>
+            </div>
+          </div>
+          <!-- Graph 2 -->
+          <div class="col-md-6">
+            <h2 class="text-center">Graph G'</h2>
+            <div class="graph-container">
+              <div id="graph-container2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+         <!-- Graph 3 -->
+        <div class="col-md-6">
+          <h2 class="text-center">Cycle in Graph G</h2>
+          <div id="graph3-container" class="graph-container">
+            <div id="graph-container3"></div>
+          </div>
+          <div id="graph3-message" class="text-center" style="display: none;">
+            No Rudrata cycles found in input graph G.
+          </div>
+        </div>
+        <!-- Graph 4 -->
+        <div class="col-md-6">
+          <h2 class="text-center">Cycle in Graph G'</h2>
+          <div id="graph4-container" class="graph-container">
+            <div id="graph-container4"></div>
+          </div>
+          <div id="graph4-message" class="text-center" style="display: none;">
+            No Rudrata cycles found in input graph G.
+          </div>
+        </div>
+
+        </div>
+      </div>
+  
+  <!-- Your custom JavaScript -->
+  <script>
+    // Graph initialization
+    document.addEventListener('DOMContentLoaded', function () {
+      const Graph1 = ForceGraph3D()
+    (document.getElementById('graph-container1'))
+    .jsonUrl('/datasets/rudrata_input.json')
+        .nodeLabel('id')
+        .nodeColor(node=> '#00C8FF')
+        .linkColor(link=> '#00C8FF')
+        .linkWidth(link => 0.5)
+        .linkOpacity(link => 1);
+
+    const Graph2 = ForceGraph3D()
+      (document.getElementById('graph-container2'))
+        .jsonUrl('/datasets/complete_graph.json')
+        .nodeLabel('id')
+        .nodeColor(node=> '#00C8FF')
+        .linkColor(link => link.value == 1 ? '#00C8FF':'#FF6A00'  )
+        .linkWidth(link => link.value == 1 ? 1:0.5)
+        .linkOpacity(link => link.value==1? 0.8:0.2)
+      var showAlert = {% if show_alert %}true{% else %}false{% endif %};
+
+    if (showAlert) {
+    // Hide Graphs 3 and 4, Show Messages
+    document.getElementById('graph-container3').innerHTML = '<div class="alert-custom" role="alert">No Rudrata cycles found in input graph G.</div>';
+    document.getElementById('graph-container4').innerHTML = '<div class="alert-custom" role="alert">No Rudrata cycles found in input graph G.</div>';
+  } else{
+    const Graph3 = ForceGraph3D()
+      (document.getElementById('graph-container3'))
+        .jsonUrl('/datasets/rudrata_output.json')
+        .nodeLabel('id')
+        .nodeColor(node=> '#FFFF00')
+        .linkColor(link => link.value == 2 ? '#FFFF00' : '#00C8FF' )
+        .linkWidth(link => link.value == 2 ? 2:0.5)
+        .linkOpacity(link => link.value==2 ? 0.8:0.2);
+
+    const Graph4 = ForceGraph3D()
+      (document.getElementById('graph-container4'))
+        .jsonUrl('/datasets/tsp_output.json')
+        .nodeLabel('id')
+        .nodeColor(node=> '#FFFF00')
+        .linkColor(link => link.value == 2 ? '#FFFF00' :  (link.value == 1 ? '#00C8FF' : '#FF6A00') )
+        .linkWidth(link => link.value == 2 ? 2:(link.value==1? 1:0.5))
+        .linkOpacity(link => link.value==2? 0.8:0.2);
+  }
+    });
+    
+  
+   
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
